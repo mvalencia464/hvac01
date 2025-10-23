@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import {
-  Home,
+  Home as HomeIcon, // Renamed Home to HomeIcon to avoid conflict
   Wrench,
   Droplet,
   Zap,
@@ -24,7 +24,7 @@ function Header({ onNav }) {
       <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
         <div className="flex items-center space-x-3">
           <div className="w-10 h-10 bg-blue-700 rounded-lg flex items-center justify-center">
-            <Home className="text-white w-6 h-6" />
+            <HomeIcon className="text-white w-6 h-6" /> {/* Using HomeIcon */}
           </div>
           <h1 className="text-xl font-bold text-blue-900">{genericInfo.companyName}</h1>
         </div>
