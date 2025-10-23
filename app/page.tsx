@@ -172,9 +172,10 @@ export default function HomePage() {
           <Image
             src="/hero-hvac.png"
             alt="HVAC technician giving a thumbs up"
-            layout="fill"
-            objectFit="cover"
+            fill
+            style={{ objectFit: 'cover' }}
             quality={90}
+            priority
             className="brightness-50" // Darken the image slightly for better text contrast
           />
           <div className="absolute inset-0 bg-blue-900 opacity-30"></div> {/* Blue overlay */}

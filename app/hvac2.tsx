@@ -1,12 +1,10 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import {
   Home as HomeIcon, // Renamed Home to HomeIcon to avoid conflict
   Wrench,
   Droplet,
   Zap,
   MapPin,
-  Phone,
-  ArrowRight,
   ChevronLeft
 } from 'lucide-react';
 
@@ -78,7 +76,11 @@ function ServicesPage({ onSelectService }: { onSelectService: (id: string) => vo
 
 // --- SERVICE DETAIL PAGE ---
 function ServiceDetail({ serviceId, onBack }: { serviceId: string; onBack: () => void }) {
-  const serviceDetails = {
+  const serviceDetails: Record<string, {
+    name: string;
+    description: string;
+    features: string[];
+  }> = {
     hvac: {
       name: 'Heating & Cooling',
       description: 'We provide expert AC repair, furnace maintenance, and indoor air quality solutions to keep your home comfortable year-round.',
@@ -141,7 +143,13 @@ function LocationsPage({ onSelectLocation }: { onSelectLocation: (id: string) =>
 
 // --- LOCATION DETAIL PAGE ---
 function LocationDetail({ locationId, onBack }: { locationId: string; onBack: () => void }) {
-  const locationDetails = {
+  const locationDetails: Record<string, {
+    name: string;
+    phone: string;
+    address: string;
+    description: string;
+    hours: string;
+  }> = {
     metro: {
       name: 'Metro City',
       phone: '(555) 123-4567',
