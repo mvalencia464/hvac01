@@ -19,6 +19,7 @@ import {
   MapPin,
   Calendar
 } from 'lucide-react';
+import ReviewsSection from '../src/components/ReviewsSection'; // Import the new component
 
 export default function HomePage() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -268,6 +269,9 @@ export default function HomePage() {
         {/* Decorative bottom curve or transition could go here */}
         <div className="h-16 bg-white" style={{ clipPath: 'polygon(0 100%, 100% 100%, 100% 0, 0 100%)' }}></div>
       </main>
+
+      {/* --- REVIEWS SECTION --- */}
+      <ReviewsSection />
 
       {/* --- SIMPLE FOOTER PREVIEW --- */}
       <footer className="bg-white py-8 px-4 border-t border-gray-100">
