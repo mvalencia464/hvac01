@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import Image from 'next/image'; // Import Image component
 import {
   Phone,
   Menu,
@@ -166,44 +167,43 @@ export default function HomePage() {
 
       {/* --- HERO SECTION --- */}
       <main className="flex-grow relative">
-        {/* Generic Background Placeholder */}
-        <div className="absolute inset-0 bg-gray-200">
-          <div className="w-full h-full opacity-20 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-gray-700 via-gray-900 to-black" />
-           {/* Use a pattern to make it look less plain if no image */}
-           <svg className="absolute inset-0 h-full w-full opacity-10" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
-              <defs>
-                <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-                  <path d="M 40 0 L 0 0 0 40" fill="none" stroke="currentColor" strokeWidth="1" />
-                </pattern>
-              </defs>
-              <rect width="100%" height="100%" fill="url(#grid)" />
-            </svg>
+        {/* Hero Background Image */}
+        <div className="absolute inset-0">
+          <Image
+            src="/hero-hvac.png"
+            alt="HVAC technician giving a thumbs up"
+            layout="fill"
+            objectFit="cover"
+            quality={90}
+            className="brightness-50" // Darken the image slightly for better text contrast
+          />
+          <div className="absolute inset-0 bg-blue-900 opacity-30"></div> {/* Blue overlay */}
         </div>
 
-        <div className="relative max-w-7xl mx-auto px-4 py-12 lg:py-24 grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
+        <div className="relative max-w-7xl mx-auto px-4 py-12 lg:py-24 grid lg:grid-cols-2 gap-12 lg:gap-8 items-center text-white"> {/* Added text-white for contrast */}
           {/* Left Content */}
           <div className="space-y-8 text-center lg:text-left">
-            <div className="inline-flex items-center space-x-2 bg-blue-900/10 bg-opacity-60 backdrop-blur-sm text-blue-900 font-semibold px-4 py-2 rounded-full text-sm border border-blue-900/20">
+            <div className="inline-flex items-center space-x-2 bg-white/20 backdrop-blur-sm text-white font-semibold px-4 py-2 rounded-full text-sm border border-white/30">
               <ShieldCheck className="w-5 h-5" />
               <span>Fully Insured & Licensed Specialists</span>
             </div>
 
             <div className="space-y-4">
-              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight">
-                Servicing <span className="text-blue-700">{genericInfo.cityRegion}</span> Residents Since {genericInfo.establishedYear}
+              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight">
+                Servicing <span className="text-red-400">{genericInfo.cityRegion}</span> Residents Since {genericInfo.establishedYear}
               </h2>
-              <p className="text-xl text-gray-700 max-w-xl mx-auto lg:mx-0">
+              <p className="text-xl max-w-xl mx-auto lg:mx-0">
                 The area's most trusted HVAC, Plumbing & Electrical specialists. We get it done right the first time.
               </p>
             </div>
 
             <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start space-y-4 sm:space-y-0 sm:space-x-4">
-              <button className="w-full sm:w-auto bg-blue-700 hover:bg-blue-800 text-white font-bold py-4 px-8 rounded-md transition-transform active:scale-95 flex items-center justify-center space-x-2 shadow-lg shadow-blue-900/20">
+              <button className="w-full sm:w-auto bg-red-600 hover:bg-red-700 text-white font-bold py-4 px-8 rounded-md transition-transform active:scale-95 flex items-center justify-center space-x-2 shadow-lg shadow-red-900/20">
                 <span>See Our Discounts</span>
                 <ChevronRight className="w-5 h-5" />
               </button>
-              <div className="flex items-center space-x-2 text-gray-700 font-medium">
-                <Award className="w-6 h-6 text-blue-700" />
+              <div className="flex items-center space-x-2 font-medium">
+                <Award className="w-6 h-6 text-red-400" />
                 <span>100% Satisfaction Guarantee</span>
               </div>
             </div>
