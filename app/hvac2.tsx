@@ -17,8 +17,11 @@ const genericInfo = {
   establishedYear: "1998",
 };
 
+// Define a type for the page names
+type PageName = 'services' | 'serviceDetail' | 'locations' | 'locationDetail';
+
 // --- HEADER COMPONENT ---
-function Header({ onNav }) {
+function Header({ onNav }: { onNav: (page: PageName) => void }) {
   return (
     <header className="bg-white shadow-md sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
@@ -50,7 +53,7 @@ function Footer() {
 }
 
 // --- SERVICES PAGE ---
-function ServicesPage({ onSelectService }) {
+function ServicesPage({ onSelectService }: { onSelectService: (id: string) => void }) {
   const services = [
     { id: 'hvac', name: 'Heating & Cooling', icon: Wrench, description: 'AC repair, furnace maintenance, indoor air quality.' },
     { id: 'plumbing', name: 'Plumbing & Drains', icon: Droplet, description: 'Leak repair, water heaters, drain cleaning.' },
@@ -74,7 +77,7 @@ function ServicesPage({ onSelectService }) {
 }
 
 // --- SERVICE DETAIL PAGE ---
-function ServiceDetail({ serviceId, onBack }) {
+function ServiceDetail({ serviceId, onBack }: { serviceId: string; onBack: () => void }) {
   const serviceDetails = {
     hvac: {
       name: 'Heating & Cooling',
@@ -112,7 +115,7 @@ function ServiceDetail({ serviceId, onBack }) {
 }
 
 // --- LOCATIONS PAGE ---
-function LocationsPage({ onSelectLocation }) {
+function LocationsPage({ onSelectLocation }: { onSelectLocation: (id: string) => void }) {
   const locations = [
     { id: 'metro', name: 'Metro City', phone: '(555) 123-4567', address: '123 Service Lane, Metro City, ST 12345' },
     { id: 'suburb', name: 'Suburbia', phone: '(555) 987-6543', address: '456 Suburb St, Suburbia, ST 67890' },
@@ -137,7 +140,7 @@ function LocationsPage({ onSelectLocation }) {
 }
 
 // --- LOCATION DETAIL PAGE ---
-function LocationDetail({ locationId, onBack }) {
+function LocationDetail({ locationId, onBack }: { locationId: string; onBack: () => void }) {
   const locationDetails = {
     metro: {
       name: 'Metro City',
@@ -185,15 +188,15 @@ function LocationDetail({ locationId, onBack }) {
 
 // --- MAIN APP COMPONENT ---
 export default function Home() {
-  const [page, setPage] = useState('services'); // 'services' | 'serviceDetail' | 'locations' | 'locationDetail'
-  const [selectedId, setSelectedId] = useState(null);
+  const [page, setPage] = useState<PageName>('services'); // 'services' | 'serviceDetail' | 'locations' | 'locationDetail'
+  const [selectedId, setSelectedId] = useState<string | null>(null);
 
-  const handleSelectService = (id) => {
+  const handleSelectService = (id: string) => {
     setSelectedId(id);
     setPage('serviceDetail');
   };
 
-  const handleSelectLocation = (id) => {
+  const handleSelectLocation = (id: string) => {
     setSelectedId(id);
     setPage('locationDetail');
   };
