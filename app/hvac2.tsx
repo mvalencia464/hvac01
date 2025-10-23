@@ -9,8 +9,8 @@ import {
 } from 'lucide-react';
 
 const genericInfo = {
-  companyName: "Elite Home Services",
-  phone: "(555) 123-4567",
+  companyName: "Stoke HVAC",
+  phone: "5091234567",
   cityRegion: "Metro City",
   establishedYear: "1998",
 };
@@ -119,9 +119,9 @@ function ServiceDetail({ serviceId, onBack }: { serviceId: string; onBack: () =>
 // --- LOCATIONS PAGE ---
 function LocationsPage({ onSelectLocation }: { onSelectLocation: (id: string) => void }) {
   const locations = [
-    { id: 'metro', name: 'Metro City', phone: '(555) 123-4567', address: '123 Service Lane, Metro City, ST 12345' },
-    { id: 'suburb', name: 'Suburbia', phone: '(555) 987-6543', address: '456 Suburb St, Suburbia, ST 67890' },
-    { id: 'uptown', name: 'Uptown', phone: '(555) 555-1212', address: '789 Uptown Ave, Uptown, ST 11223' },
+    { id: 'metro', name: 'Metro City', phone: genericInfo.phone, address: '123 Service Lane, Metro City, ST 12345' },
+    { id: 'suburb', name: 'Suburbia', phone: genericInfo.phone, address: '456 Suburb St, Suburbia, ST 67890' },
+    { id: 'uptown', name: 'Uptown', phone: genericInfo.phone, address: '789 Uptown Ave, Uptown, ST 11223' },
   ];
 
   return (
@@ -152,21 +152,21 @@ function LocationDetail({ locationId, onBack }: { locationId: string; onBack: ()
   }> = {
     metro: {
       name: 'Metro City',
-      phone: '(555) 123-4567',
+      phone: genericInfo.phone,
       address: '123 Service Lane, Metro City, ST 12345',
       description: 'Serving the heart of Metro City with fast, reliable home services.',
       hours: 'Mon-Fri: 7am-8pm, Sat-Sun: 8am-5pm',
     },
     suburb: {
       name: 'Suburbia',
-      phone: '(555) 987-6543',
+      phone: genericInfo.phone,
       address: '456 Suburb St, Suburbia, ST 67890',
       description: 'Covering all of Suburbia with expert HVAC, plumbing, and electrical services.',
       hours: 'Mon-Fri: 8am-6pm, Sat: 9am-4pm',
     },
     uptown: {
       name: 'Uptown',
-      phone: '(555) 555-1212',
+      phone: genericInfo.phone,
       address: '789 Uptown Ave, Uptown, ST 11223',
       description: 'Trusted by Uptown residents for quality home service solutions.',
       hours: 'Mon-Fri: 7am-7pm, Sat-Sun: Closed',

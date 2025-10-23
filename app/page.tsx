@@ -25,8 +25,8 @@ export default function HomePage() {
   const [selectedService, setSelectedService] = useState<string | null>(null);
 
   const genericInfo = {
-    companyName: "[Generic Company Name]",
-    phone: "[XXX-XXX-XXXX]",
+    companyName: "Stoke HVAC",
+    phone: "5091234567",
     cityRegion: "[City/Region]",
     establishedYear: "[Year]",
     rating: "[X.X]",
@@ -94,7 +94,7 @@ export default function HomePage() {
           <div className="hidden md:flex items-center space-x-4 lg:space-x-6">
             <div className="flex flex-col items-end">
               <span className="text-xs text-gray-500 font-medium">24/7 Service</span>
-              <a href="tel:" className="flex items-center space-x-2 text-xl font-bold text-gray-900">
+              <a href={`tel:${genericInfo.phone}`} className="flex items-center space-x-2 text-xl font-bold text-gray-900">
                 <Phone className="w-5 h-5 text-blue-700 fill-current" />
                 <span>{genericInfo.phone}</span>
               </a>
@@ -258,7 +258,7 @@ export default function HomePage() {
                   Submit Request
                 </button>
                 <p className="text-xs text-center text-gray-500">
-                  For emergencies, please call us directly at <a href="tel:" className="underline font-semibold hover:text-red-600">{genericInfo.phone}</a>
+                  For emergencies, please call us directly at <a href={`tel:${genericInfo.phone}`} className="underline font-semibold hover:text-red-600">{genericInfo.phone}</a>
                 </p>
               </div>
             </form>
