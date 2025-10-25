@@ -249,11 +249,11 @@ export default function HomePage() {
               <div className="space-y-4 pt-2">
                 <div>
                   <label htmlFor="name" className="sr-only">Full Name</label>
-                  <input type="text" id="name" placeholder="Full Name" className="w-full px-4 py-3 rounded-md border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-shadow" />
+                  <input type="text" id="name" placeholder="Full Name" className="w-full px-4 py-3 rounded-md border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-shadow bg-white text-gray-900" />
                 </div>
                 <div>
                   <label htmlFor="phone" className="sr-only">Phone Number</label>
-                  <input type="tel" id="phone" placeholder="Phone Number" className="w-full px-4 py-3 rounded-md border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-shadow" />
+                  <input type="tel" id="phone" placeholder="Phone Number" className="w-full px-4 py-3 rounded-md border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-shadow bg-white text-gray-900" />
                 </div>
                 <button type="submit" className="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-4 px-8 rounded-md transition-colors shadow-md text-lg">
                   Submit Request
