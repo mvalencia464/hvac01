@@ -10,7 +10,7 @@ import {
 
 const genericInfo = {
   companyName: "Stoke HVAC",
-  phone: "5091234567",
+  phone: "509-300-3701",
   cityRegion: "Metro City",
   establishedYear: "1998",
 };
